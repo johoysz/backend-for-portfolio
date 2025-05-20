@@ -30,6 +30,7 @@ COPY . .
 RUN composer install --optimize-autoloader --no-dev
 
 # Generate Laravel app key
+RUN cp .env.example .env
 RUN php artisan key:generate
 
 # Set permissions
